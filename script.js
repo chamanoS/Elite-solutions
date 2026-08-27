@@ -189,4 +189,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+    /* =========================================
+   CV BUTTON
+========================================= */
+
+const downloadCv =
+    document.getElementById("downloadCv");
+
+if (downloadCv) {
+
+    downloadCv.addEventListener("click", (event) => {
+
+        event.preventDefault();
+
+        /*
+         * Temporary behaviour.
+         *
+         * Later replace "#" with:
+         *
+         * href="assets/docs/chamano-ramashia-cv.pdf"
+         */
+
+        alert(
+            "CV coming soon. This will be connected to the downloadable CV."
+        );
+
+    });
+
+}
+
 });

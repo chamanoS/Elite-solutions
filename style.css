@@ -1692,3 +1692,361 @@ img {
 
     font-size: 10px;
 }
+
+/* =========================================================
+   FOUNDER / PROFESSIONAL PROFILE
+   Chamano Elite Solutions
+========================================================= */
+
+
+/* =========================================
+   FOUNDER SECTION
+========================================= */
+
+.founder-section {
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   FOUNDER GRID
+========================================= */
+
+.founder-grid {
+    display: grid;
+
+    grid-template-columns: 0.85fr 1.15fr;
+
+    gap: 100px;
+
+    align-items: center;
+}
+
+
+/* =========================================
+   FOUNDER VISUAL
+========================================= */
+
+.founder-visual {
+    display: flex;
+
+    justify-content: center;
+}
+
+.founder-frame {
+
+    position: relative;
+
+    width: min(100%, 430px);
+
+    aspect-ratio: 0.82;
+
+    overflow: hidden;
+
+    border: 1px solid var(--color-border);
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(201, 163, 78, 0.08),
+            transparent 55%
+        ),
+        var(--color-bg-secondary);
+
+}
+
+
+/* =========================================
+   TECHNICAL GRID
+========================================= */
+
+.founder-grid-lines {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        linear-gradient(
+            rgba(201, 163, 78, 0.05) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(201, 163, 78, 0.05) 1px,
+            transparent 1px
+        );
+
+    background-size: 40px 40px;
+
+    opacity: 0.6;
+
+}
+
+
+/* =========================================
+   INITIAL
+========================================= */
+
+.founder-initial {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: transparent;
+
+    font-family: var(--font-display);
+
+    font-size: clamp(190px, 25vw, 320px);
+
+    line-height: 1;
+
+    -webkit-text-stroke: 1px
+        rgba(201, 163, 78, 0.35);
+
+    text-shadow:
+        0 0 60px
+        rgba(201, 163, 78, 0.08);
+
+}
+
+
+/* =========================================
+   CORNER LABELS
+========================================= */
+
+.founder-corner {
+
+    position: absolute;
+
+    z-index: 2;
+
+    color: var(--color-muted);
+
+    font-size: 7px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.15em;
+}
+
+.founder-corner.top-left {
+    top: 20px;
+    left: 20px;
+}
+
+.founder-corner.top-right {
+    top: 20px;
+    right: 20px;
+}
+
+.founder-corner.bottom-left {
+    bottom: 20px;
+    left: 20px;
+}
+
+.founder-corner.bottom-right {
+    bottom: 20px;
+    right: 20px;
+}
+
+
+/* =========================================
+   CODE LABEL
+========================================= */
+
+.founder-code {
+
+    position: absolute;
+
+    right: 20px;
+    bottom: 42px;
+
+    display: flex;
+
+    gap: 8px;
+
+    color: var(--color-gold);
+
+    font-size: 7px;
+
+    letter-spacing: 0.12em;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   FOUNDER ROLE
+========================================= */
+
+.founder-role {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    margin-bottom: 35px;
+}
+
+.founder-role-line {
+
+    width: 30px;
+    height: 1px;
+
+    margin-top: 8px;
+
+    flex-shrink: 0;
+
+    background: var(--color-gold);
+}
+
+.founder-role strong {
+
+    display: block;
+
+    color: var(--color-text);
+
+    font-size: 12px;
+
+    letter-spacing: 0.08em;
+}
+
+.founder-role small {
+
+    display: block;
+
+    margin-top: 6px;
+
+    color: var(--color-muted);
+
+    font-size: 9px;
+
+    letter-spacing: 0.04em;
+}
+
+
+/* =========================================
+   STORY
+========================================= */
+
+.founder-story {
+
+    max-width: 650px;
+}
+
+.founder-story p {
+
+    margin-bottom: 18px;
+
+    color: var(--color-muted);
+
+    font-size: 14px;
+
+    line-height: 1.85;
+}
+
+.founder-story .founder-lead {
+
+    margin-bottom: 25px;
+
+    color: var(--color-text);
+
+    font-family: var(--font-display);
+
+    font-size: clamp(27px, 3vw, 37px);
+
+    line-height: 1.15;
+}
+
+
+/* =========================================
+   HIGHLIGHTS
+========================================= */
+
+.founder-highlights {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    margin-top: 45px;
+
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.founder-highlight {
+
+    padding: 25px 18px;
+
+    border-right: 1px solid var(--color-border);
+}
+
+.founder-highlight:last-child {
+    border-right: 0;
+}
+
+.founder-highlight > span {
+
+    display: block;
+
+    margin-bottom: 17px;
+
+    color: var(--color-gold);
+
+    font-size: 8px;
+
+    letter-spacing: 0.1em;
+}
+
+.founder-highlight strong {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--color-text);
+
+    font-size: 9px;
+
+    letter-spacing: 0.08em;
+}
+
+.founder-highlight p {
+
+    margin: 0;
+
+    color: var(--color-muted);
+
+    font-size: 9px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.founder-actions {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 35px;
+}

@@ -324,3 +324,153 @@
     }
 
 }
+
+/* =========================================================
+   FOUNDER SECTION — RESPONSIVE
+========================================================= */
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 999px) {
+
+    .founder-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 65px;
+
+    }
+
+    .founder-visual {
+
+        justify-content: flex-start;
+
+    }
+
+    .founder-frame {
+
+        width: min(100%, 400px);
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+    .founder-grid {
+
+        gap: 45px;
+
+    }
+
+    .founder-frame {
+
+        width: 100%;
+
+        max-width: 360px;
+
+    }
+
+    .founder-story p {
+
+        font-size: 13px;
+
+        line-height: 1.75;
+
+    }
+
+    .founder-story .founder-lead {
+
+        font-size: 28px;
+
+    }
+
+    .founder-highlights {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .founder-highlight {
+
+        border-right: 0;
+
+        border-bottom:
+            1px solid var(--color-border);
+
+    }
+
+    .founder-highlight:last-child {
+
+        border-bottom: 0;
+
+    }
+
+    .founder-actions {
+
+        flex-direction: column;
+
+    }
+
+    .founder-actions .btn {
+
+        width: 100%;
+
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .founder-frame {
+
+        max-width: 100%;
+
+    }
+
+    .founder-initial {
+
+        font-size: 170px;
+
+    }
+
+    .founder-corner {
+
+        font-size: 6px;
+
+    }
+
+    .founder-role {
+
+        gap: 12px;
+
+    }
+
+    .founder-role strong {
+
+        font-size: 10px;
+
+    }
+
+    .founder-role small {
+
+        font-size: 8px;
+
+        line-height: 1.5;
+
+    }
+
+}
