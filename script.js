@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentYear) {
 
         currentYear.textContent =
-            `© ${new Date().getFullYear()} Chamano Elite Solutions`;
+            `© ${new Date().getFullYear()} Chamano Tech Solutions`;
 
     }
 

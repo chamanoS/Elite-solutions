@@ -1226,6 +1226,11 @@ img {
 
     font-size: 30px;
 }
+.footer-brand-text{
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+}
 
 .footer-container p {
     margin-top: 5px;
