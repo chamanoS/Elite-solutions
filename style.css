@@ -1283,3 +1283,407 @@ img {
 
     transform: translateY(0);
 }
+
+/* =========================================================
+   TECH / DIGITAL ELEMENTS
+   Chamano Elite Solutions
+========================================================= */
+
+
+/* =========================================
+   HERO TOP LINE
+========================================= */
+
+.hero-top-line {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 28px;
+}
+
+.hero-top-line .eyebrow {
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   SYSTEM STATUS
+========================================= */
+
+.system-status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: var(--color-muted);
+
+    font-size: 8px;
+    font-weight: 600;
+
+    letter-spacing: 0.13em;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+
+    display: inline-block;
+
+    border-radius: 50%;
+
+    background: var(--color-gold);
+
+    box-shadow:
+        0 0 0 0 rgba(201, 163, 78, 0.5);
+
+    animation: statusPulse 2s infinite;
+}
+
+@keyframes statusPulse {
+
+    0% {
+        box-shadow:
+            0 0 0 0 rgba(201, 163, 78, 0.5);
+    }
+
+    70% {
+        box-shadow:
+            0 0 0 7px rgba(201, 163, 78, 0);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 0 rgba(201, 163, 78, 0);
+    }
+
+}
+
+
+/* =========================================
+   TECHNOLOGY TICKER
+========================================= */
+
+.tech-ticker {
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    padding: 16px 0;
+
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+
+    background: var(--color-bg-secondary);
+}
+
+.tech-ticker::before,
+.tech-ticker::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    width: 100px;
+    height: 100%;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+.tech-ticker::before {
+    left: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--color-bg-secondary),
+            transparent
+        );
+}
+
+.tech-ticker::after {
+    right: 0;
+
+    background:
+        linear-gradient(
+            270deg,
+            var(--color-bg-secondary),
+            transparent
+        );
+}
+
+.tech-ticker-track {
+    width: max-content;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    animation: tickerMove 35s linear infinite;
+}
+
+.tech-ticker-track span {
+    color: var(--color-muted);
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.16em;
+
+    white-space: nowrap;
+}
+
+.tech-ticker-track i {
+    color: var(--color-gold);
+
+    font-size: 8px;
+
+    font-style: normal;
+}
+
+@keyframes tickerMove {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/* =========================================
+   HERO TECHNICAL GRID
+========================================= */
+
+.hero-card {
+    overflow: hidden;
+}
+
+.technical-grid {
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0.45;
+
+    background-image:
+        linear-gradient(
+            rgba(201, 163, 78, 0.06) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(201, 163, 78, 0.06) 1px,
+            transparent 1px
+        );
+
+    background-size: 35px 35px;
+
+    mask-image:
+        radial-gradient(
+            circle at center,
+            black 0%,
+            transparent 75%
+        );
+
+    -webkit-mask-image:
+        radial-gradient(
+            circle at center,
+            black 0%,
+            transparent 75%
+        );
+
+    animation: gridMove 12s linear infinite;
+}
+
+@keyframes gridMove {
+
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(35px, 35px);
+    }
+
+}
+
+
+/* =========================================
+   DATA POINTS
+========================================= */
+
+.data-point {
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: var(--color-gold);
+
+    box-shadow:
+        0 0 12px rgba(201, 163, 78, 0.6);
+
+    z-index: 2;
+
+    animation: dataPulse 3s ease-in-out infinite;
+}
+
+.data-point-one {
+    top: 27%;
+    left: 20%;
+}
+
+.data-point-two {
+    top: 62%;
+    right: 19%;
+
+    animation-delay: 1s;
+}
+
+.data-point-three {
+    bottom: 22%;
+    left: 32%;
+
+    animation-delay: 2s;
+}
+
+@keyframes dataPulse {
+
+    0%,
+    100% {
+        opacity: 0.25;
+
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform: scale(1.4);
+    }
+
+}
+
+
+/* =========================================
+   HERO SYSTEM INFORMATION
+========================================= */
+
+.hero-system-info {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 15px;
+
+    z-index: 3;
+}
+
+.hero-system-info > span {
+    color: var(--color-muted);
+
+    font-size: 7px;
+
+    letter-spacing: 0.15em;
+}
+
+.hero-system-info strong {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: var(--color-gold-light);
+
+    font-size: 7px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.1em;
+}
+
+
+/* =========================================
+   AVAILABILITY
+========================================= */
+
+.availability {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    margin-top: 40px;
+
+    padding: 18px 20px;
+
+    border: 1px solid var(--color-border);
+
+    background: rgba(201, 163, 78, 0.035);
+}
+
+.availability-dot {
+    position: relative;
+
+    width: 7px;
+    height: 7px;
+
+    flex-shrink: 0;
+
+    margin-top: 5px;
+
+    border-radius: 50%;
+
+    background: var(--color-gold);
+
+    box-shadow:
+        0 0 12px rgba(201, 163, 78, 0.5);
+}
+
+.availability div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.availability strong {
+    color: var(--color-text);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.03em;
+}
+
+.availability span {
+    color: var(--color-muted);
+
+    font-size: 10px;
+}

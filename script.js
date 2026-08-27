@@ -137,4 +137,56 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+
+        /* =========================================
+       LIVE SYSTEM TIME
+    ========================================= */
+
+    const systemTime = document.getElementById("systemTime");
+
+    function updateSystemTime() {
+
+        if (!systemTime) return;
+
+        const now = new Date();
+
+        const hours = String(
+            now.getHours()
+        ).padStart(2, "0");
+
+        const minutes = String(
+            now.getMinutes()
+        ).padStart(2, "0");
+
+        const seconds = String(
+            now.getSeconds()
+        ).padStart(2, "0");
+
+        systemTime.textContent =
+            `${hours}:${minutes}:${seconds}`;
+
+    }
+
+    updateSystemTime();
+
+    setInterval(
+        updateSystemTime,
+        1000
+    );
+
+
+    /* =========================================
+       DYNAMIC YEAR
+    ========================================= */
+
+    const currentYear =
+        document.querySelector(".footer-bottom span");
+
+    if (currentYear) {
+
+        currentYear.textContent =
+            `© ${new Date().getFullYear()} Chamano Elite Solutions`;
+
+    }
+
 });

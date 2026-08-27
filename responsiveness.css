@@ -225,3 +225,102 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* =========================================================
+   TECH ELEMENTS — RESPONSIVE
+========================================================= */
+
+
+/* -----------------------------------------
+   TABLET
+----------------------------------------- */
+
+@media (max-width: 999px) {
+
+    .hero-top-line {
+        max-width: 800px;
+    }
+
+}
+
+
+/* -----------------------------------------
+   MOBILE
+----------------------------------------- */
+
+@media (max-width: 767px) {
+
+    .hero-top-line {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .system-status {
+        margin-left: 42px;
+    }
+
+    .tech-ticker {
+        padding: 14px 0;
+    }
+
+    .tech-ticker-track {
+        gap: 18px;
+
+        animation-duration: 28s;
+    }
+
+    .tech-ticker-track span {
+        font-size: 8px;
+    }
+
+    .hero-system-info {
+        padding: 0 8px;
+    }
+
+    .availability {
+        margin-top: 30px;
+
+        padding: 16px;
+    }
+
+}
+
+
+/* -----------------------------------------
+   SMALL MOBILE
+----------------------------------------- */
+
+@media (max-width: 480px) {
+
+    .system-status {
+        margin-left: 0;
+    }
+
+    .tech-ticker-track {
+        gap: 15px;
+
+        animation-duration: 24s;
+    }
+
+    .tech-ticker-track span {
+        font-size: 7px;
+
+        letter-spacing: 0.12em;
+    }
+
+    .tech-ticker-track i {
+        font-size: 6px;
+    }
+
+    .availability strong {
+        font-size: 10px;
+    }
+
+    .availability span {
+        font-size: 9px;
+    }
+
+}
