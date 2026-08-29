@@ -1088,3 +1088,163 @@
     }
 
 }
+
+/* =========================================================
+   CONTACT PAGE — RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .contact-layout {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 60px;
+
+    }
+
+
+    .contact-sidebar {
+
+        position: static;
+
+    }
+
+
+    .contact-sidebar-block {
+
+        max-width:
+            600px;
+
+    }
+
+}
+
+
+@media (max-width: 767px) {
+
+    .form-section {
+
+        padding:
+            30px 20px;
+
+    }
+
+
+    .form-submit-area {
+
+        padding:
+            30px 20px;
+
+    }
+
+
+    .service-choice-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .dynamic-fields {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .selected-product-box {
+
+        grid-column:
+            span 1;
+
+    }
+
+
+    .form-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .full-field {
+
+        grid-column:
+            span 1;
+
+    }
+
+
+    .form-section-heading {
+
+        gap:
+            15px;
+
+        margin-bottom:
+            25px;
+
+    }
+
+
+    .form-section-heading h3 {
+
+        font-size:
+            25px;
+
+    }
+
+
+    .contact-success {
+
+        padding:
+            50px 25px;
+
+    }
+
+
+    .contact-final-inner {
+
+        padding:
+            60px 10px;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .contact-sidebar h2 {
+
+        font-size:
+            44px;
+
+    }
+
+
+    .service-choice {
+
+        min-height:
+            60px;
+
+        padding:
+            13px;
+
+    }
+
+
+    .field input,
+    .field select,
+    .field textarea {
+
+        font-size:
+            11px;
+
+    }
+
+}

@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("menuToggle");
 
     const mainNav =
-        document.querySelector(".main-nav");
+        document.getElementById("mainNav");
 
 
     if (menuToggle && mainNav) {
@@ -26,16 +26,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
             menuToggle.setAttribute(
                 "aria-expanded",
-                isOpen
+                String(isOpen)
             );
 
         });
 
 
-        /* Close menu after clicking a link */
-
         const navLinks =
             mainNav.querySelectorAll("a");
+
 
         navLinks.forEach(link => {
 
@@ -43,9 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 mainNav.classList.remove("open");
 
-                menuToggle.classList.remove(
-                    "active"
-                );
+                menuToggle.classList.remove("active");
 
                 menuToggle.setAttribute(
                     "aria-expanded",
@@ -61,19 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================================
-       ACTIVE NAVIGATION
+       ACTIVE PAGE NAVIGATION
     ========================================================= */
-
-    /*
-     * Because CES is now a multi-page website,
-     * we don't need IntersectionObserver for navigation.
-     *
-     * The active class is placed directly on the
-     * current page's navigation link.
-     *
-     * This code simply detects the current page
-     * and highlights the correct link.
-     */
 
     const currentPage =
         window.location.pathname
@@ -81,21 +67,23 @@ document.addEventListener("DOMContentLoaded", () => {
             .pop() || "index.html";
 
 
-    const navLinks =
-        document.querySelectorAll(".main-nav a");
+    const pageNavLinks =
+        document.querySelectorAll(
+            ".main-nav a"
+        );
 
 
-    navLinks.forEach(link => {
+    pageNavLinks.forEach(link => {
 
-        const linkPage =
+        const href =
             link.getAttribute("href");
 
 
         if (
-            linkPage === currentPage ||
+            href === currentPage ||
             (
                 currentPage === "" &&
-                linkPage === "index.html"
+                href === "index.html"
             )
         ) {
 
@@ -108,20 +96,529 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================================
+       LIVE SYSTEM TIME
+    ========================================================= */
+
+    const systemTime =
+        document.getElementById("systemTime");
+
+
+    function updateSystemTime() {
+
+        if (!systemTime) return;
+
+
+        const now =
+            new Date();
+
+
+        const hours =
+            String(
+                now.getHours()
+            ).padStart(2, "0");
+
+
+        const minutes =
+            String(
+                now.getMinutes()
+            ).padStart(2, "0");
+
+
+        const seconds =
+            String(
+                now.getSeconds()
+            ).padStart(2, "0");
+
+
+        systemTime.textContent =
+            `${hours}:${minutes}:${seconds}`;
+
+    }
+
+
+    updateSystemTime();
+
+    setInterval(
+        updateSystemTime,
+        1000
+    );
+
+
+
+    /* =========================================================
+       DYNAMIC YEAR
+    ========================================================= */
+
+    const footerYear =
+        document.querySelector(
+            ".footer-bottom span"
+        );
+
+
+    if (footerYear) {
+
+        footerYear.textContent =
+            `© ${new Date().getFullYear()} Chamano Elite Solutions`;
+
+    }
+
+
+
+    /* =========================================================
+       CV BUTTON
+    ========================================================= */
+
+    const downloadCv =
+        document.getElementById("downloadCv");
+
+
+    if (downloadCv) {
+
+        downloadCv.addEventListener(
+            "click",
+            event => {
+
+                event.preventDefault();
+
+                alert(
+                    "CV coming soon. This will be connected to the downloadable CV."
+                );
+
+            }
+        );
+
+    }
+
+
+
+    /* =========================================================
+       SERVICE OFFERING HOVER
+    ========================================================= */
+
+    const offeringCards =
+        document.querySelectorAll(
+            ".offering-card"
+        );
+
+
+    offeringCards.forEach(card => {
+
+        card.addEventListener(
+            "mouseenter",
+            () => {
+
+                card.classList.add(
+                    "is-active"
+                );
+
+            }
+        );
+
+
+        card.addEventListener(
+            "mouseleave",
+            () => {
+
+                card.classList.remove(
+                    "is-active"
+                );
+
+            }
+        );
+
+    });
+
+
+
+    /* =========================================================
+       CES PRACTICALS — BOOKING MODAL
+    ========================================================= */
+
+    const practicalButtons =
+        document.querySelectorAll(
+            ".practical-btn"
+        );
+
+
+    const practicalModal =
+        document.getElementById(
+            "practicalModal"
+        );
+
+
+    if (practicalModal) {
+
+        const closePracticalModal =
+            document.getElementById(
+                "closePracticalModal"
+            );
+
+
+        const modalProductName =
+            document.getElementById(
+                "modalProductName"
+            );
+
+
+        const modalProductPrice =
+            document.getElementById(
+                "modalProductPrice"
+            );
+
+
+        const modalContactBtn =
+            document.getElementById(
+                "modalContactBtn"
+            );
+
+
+        function openPracticalModal(
+            productName,
+            productPrice
+        ) {
+
+            if (modalProductName) {
+
+                modalProductName.textContent =
+                    productName;
+
+            }
+
+
+            if (modalProductPrice) {
+
+                modalProductPrice.textContent =
+                    productPrice;
+
+            }
+
+
+            if (modalContactBtn) {
+
+                const encodedProduct =
+                    encodeURIComponent(
+                        productName
+                    );
+
+
+                modalContactBtn.href =
+                    `contact.html?service=CES%20Practical&product=${encodedProduct}`;
+
+            }
+
+
+            practicalModal.classList.add(
+                "open"
+            );
+
+
+            practicalModal.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+
+            document.body.style.overflow =
+                "hidden";
+
+        }
+
+
+        function closePracticalBooking() {
+
+            practicalModal.classList.remove(
+                "open"
+            );
+
+
+            practicalModal.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+
+            document.body.style.overflow =
+                "";
+
+        }
+
+
+        practicalButtons.forEach(button => {
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    const productName =
+                        button.dataset.productName ||
+                        "CES Practical Session";
+
+
+                    const productPrice =
+                        button.dataset.productPrice ||
+                        "Price on request";
+
+
+                    openPracticalModal(
+                        productName,
+                        productPrice
+                    );
+
+                }
+            );
+
+        });
+
+
+        if (closePracticalModal) {
+
+            closePracticalModal.addEventListener(
+                "click",
+                closePracticalBooking
+            );
+
+        }
+
+
+        const modalOverlay =
+            practicalModal.querySelector(
+                ".practical-modal-overlay"
+            );
+
+
+        if (modalOverlay) {
+
+            modalOverlay.addEventListener(
+                "click",
+                closePracticalBooking
+            );
+
+        }
+
+
+        document.addEventListener(
+            "keydown",
+            event => {
+
+                if (
+                    event.key === "Escape" &&
+                    practicalModal.classList.contains(
+                        "open"
+                    )
+                ) {
+
+                    closePracticalBooking();
+
+                }
+
+            }
+        );
+
+    }
+
+
+
+    /* =========================================================
+       CONTACT PAGE — SERVICE SELECTION
+    ========================================================= */
+
+    const serviceChoices =
+        document.querySelectorAll(
+            ".service-choice"
+        );
+
+
+    const selectedService =
+        document.getElementById(
+            "selectedService"
+        );
+
+
+    const dynamicFormSection =
+        document.getElementById(
+            "dynamicFormSection"
+        );
+
+
+    const selectedProductDisplay =
+        document.getElementById(
+            "selectedProductDisplay"
+        );
+
+
+    const dynamicFields = {
+
+        "Development":
+            document.getElementById(
+                "developmentFields"
+            ),
+
+        "IT & Data":
+            document.getElementById(
+                "dataFields"
+            ),
+
+        "CES Practical":
+            document.getElementById(
+                "practicalFields"
+            ),
+
+        "Academy":
+            document.getElementById(
+                "academyFields"
+            ),
+
+        "Consulting":
+            document.getElementById(
+                "consultingFields"
+            ),
+
+        "Collaboration":
+            document.getElementById(
+                "collaborationFields"
+            )
+
+    };
+
+
+    function selectService(
+        serviceName
+    ) {
+
+        if (!selectedService) return;
+
+
+        selectedService.value =
+            serviceName;
+
+
+        serviceChoices.forEach(choice => {
+
+            choice.classList.toggle(
+                "selected",
+                choice.dataset.service ===
+                    serviceName
+            );
+
+        });
+
+
+        if (dynamicFormSection) {
+
+            dynamicFormSection.classList.add(
+                "visible"
+            );
+
+        }
+
+
+        Object.values(
+            dynamicFields
+        ).forEach(field => {
+
+            if (field) {
+
+                field.classList.remove(
+                    "active"
+                );
+
+            }
+
+        });
+
+
+        const selectedFields =
+            dynamicFields[serviceName];
+
+
+        if (selectedFields) {
+
+            selectedFields.classList.add(
+                "active"
+            );
+
+        }
+
+    }
+
+
+    serviceChoices.forEach(choice => {
+
+        choice.addEventListener(
+            "click",
+            () => {
+
+                selectService(
+                    choice.dataset.service
+                );
+
+            }
+        );
+
+    });
+
+
+
+    /* =========================================================
+       CONTACT PAGE — URL PARAMETERS
+    ========================================================= */
+
+    const urlParams =
+        new URLSearchParams(
+            window.location.search
+        );
+
+
+    const urlService =
+        urlParams.get("service");
+
+
+    const urlProduct =
+        urlParams.get("product");
+
+
+    if (urlService) {
+
+        selectService(
+            urlService
+        );
+
+    }
+
+
+    if (
+        urlProduct &&
+        selectedProductDisplay
+    ) {
+
+        selectedProductDisplay.textContent =
+            urlProduct;
+
+    }
+
+
+
+    /* =========================================================
        CONTACT FORM
     ========================================================= */
 
     const contactForm =
-        document.getElementById("contactForm");
+        document.getElementById(
+            "contactForm"
+        );
+
 
     const formMessage =
-        document.getElementById("formMessage");
+        document.getElementById(
+            "formMessage"
+        );
 
 
-    /*
-     * Only run this code if the contact form
-     * actually exists on the current page.
-     */
+    const contactSuccess =
+        document.getElementById(
+            "contactSuccess"
+        );
+
 
     if (contactForm) {
 
@@ -131,6 +628,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 event.preventDefault();
 
+
+                /* ---------------------------------------------
+                   Basic validation
+                --------------------------------------------- */
 
                 const name =
                     document
@@ -153,12 +654,39 @@ document.addEventListener("DOMContentLoaded", () => {
                         .trim();
 
 
-                if (!name || !email || !message) {
+                const service =
+                    selectedService?.value;
+
+
+                if (!service) {
 
                     if (formMessage) {
 
                         formMessage.textContent =
-                            "Please complete the required fields.";
+                            "Please select what CES can help you with.";
+
+                    }
+
+                    document
+                        .getElementById(
+                            "serviceChoices"
+                        )
+                        ?.scrollIntoView({
+                            behavior: "smooth",
+                            block: "center"
+                        });
+
+                    return;
+
+                }
+
+
+                if (!name) {
+
+                    if (formMessage) {
+
+                        formMessage.textContent =
+                            "Please enter your name.";
 
                     }
 
@@ -167,15 +695,80 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
 
-                if (formMessage) {
+                if (!email) {
 
-                    formMessage.textContent =
-                        "Thank you. Your enquiry has been received.";
+                    if (formMessage) {
+
+                        formMessage.textContent =
+                            "Please enter your email address.";
+
+                    }
+
+                    return;
 
                 }
 
 
-                contactForm.reset();
+                if (!message) {
+
+                    if (formMessage) {
+
+                        formMessage.textContent =
+                            "Please tell us a little about your enquiry.";
+
+                    }
+
+                    return;
+
+                }
+
+
+                /* ---------------------------------------------
+                   SUCCESS
+                --------------------------------------------- */
+
+                if (formMessage) {
+
+                    formMessage.textContent =
+                        "";
+
+                }
+
+
+                contactForm.style.display =
+                    "none";
+
+
+                if (contactSuccess) {
+
+                    contactSuccess.classList.add(
+                        "visible"
+                    );
+
+
+                    contactSuccess.setAttribute(
+                        "aria-hidden",
+                        "false"
+                    );
+
+
+                    contactSuccess.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+
+                }
+
+
+                /*
+                 * IMPORTANT:
+                 *
+                 * This currently only provides a
+                 * frontend success state.
+                 *
+                 * Later this submit action will send
+                 * the enquiry to our CES backend/API.
+                 */
 
             }
         );
@@ -236,424 +829,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         revealElements.forEach(element => {
 
-            element.classList.add("reveal");
-
-            revealObserver.observe(element);
-
-        });
-
-    }
-
-
-
-    /* =========================================================
-       LIVE SYSTEM TIME
-    ========================================================= */
-
-    const systemTime =
-        document.getElementById("systemTime");
-
-
-    function updateSystemTime() {
-
-        if (!systemTime) return;
-
-
-        const now =
-            new Date();
-
-
-        const hours =
-            String(
-                now.getHours()
-            ).padStart(2, "0");
-
-
-        const minutes =
-            String(
-                now.getMinutes()
-            ).padStart(2, "0");
-
-
-        const seconds =
-            String(
-                now.getSeconds()
-            ).padStart(2, "0");
-
-
-        systemTime.textContent =
-            `${hours}:${minutes}:${seconds}`;
-
-    }
-
-
-    updateSystemTime();
-
-
-    setInterval(
-        updateSystemTime,
-        1000
-    );
-
-
-
-    /* =========================================================
-       DYNAMIC YEAR
-    ========================================================= */
-
-    const footerYear =
-        document.querySelector(
-            ".footer-bottom span"
-        );
-
-
-    if (footerYear) {
-
-        footerYear.textContent =
-            `© ${new Date().getFullYear()} Chamano Elite Solutions`;
-
-    }
-
-
-
-    /* =========================================================
-       CV BUTTON
-    ========================================================= */
-
-    const downloadCv =
-        document.getElementById("downloadCv");
-
-
-    if (downloadCv) {
-
-        downloadCv.addEventListener(
-            "click",
-            event => {
-
-                event.preventDefault();
-
-
-                alert(
-                    "CV coming soon. This will be connected to the downloadable CV."
-                );
-
-            }
-        );
-
-    }
-
-
-
-    /* =========================================================
-       SERVICE OFFERING INTERACTION
-    ========================================================= */
-
-    const offeringCards =
-        document.querySelectorAll(
-            ".offering-card"
-        );
-
-
-    offeringCards.forEach(card => {
-
-        card.addEventListener(
-            "mouseenter",
-            () => {
-
-                card.classList.add(
-                    "is-active"
-                );
-
-            }
-        );
-
-
-        card.addEventListener(
-            "mouseleave",
-            () => {
-
-                card.classList.remove(
-                    "is-active"
-                );
-
-            }
-        );
-
-    });
-
-
-
-    /* =========================================================
-       CES PRACTICALS — BOOKING MODAL
-    ========================================================= */
-
-    const practicalButtons =
-        document.querySelectorAll(
-            ".practical-btn"
-        );
-
-
-    const practicalModal =
-        document.getElementById(
-            "practicalModal"
-        );
-
-
-    const closePracticalModal =
-        document.getElementById(
-            "closePracticalModal"
-        );
-
-
-    const modalProductName =
-        document.getElementById(
-            "modalProductName"
-        );
-
-
-    const modalProductPrice =
-        document.getElementById(
-            "modalProductPrice"
-        );
-
-
-    const modalContactBtn =
-        document.getElementById(
-            "modalContactBtn"
-        );
-
-
-    /*
-     * Only initialise the modal if it
-     * actually exists on this page.
-     */
-
-    if (practicalModal) {
-
-
-        /* =====================================================
-           OPEN MODAL
-        ====================================================== */
-
-        function openPracticalModal(
-            productName,
-            productPrice
-        ) {
-
-
-            if (modalProductName) {
-
-                modalProductName.textContent =
-                    productName;
-
-            }
-
-
-            if (modalProductPrice) {
-
-                modalProductPrice.textContent =
-                    productPrice;
-
-            }
-
-
-            /*
-             * Pass selected product to contact page.
-             */
-
-            if (modalContactBtn) {
-
-                const encodedProduct =
-                    encodeURIComponent(
-                        productName
-                    );
-
-
-                modalContactBtn.href =
-                    `contact.html?service=${encodedProduct}`;
-
-            }
-
-
-            practicalModal.classList.add(
-                "open"
+            element.classList.add(
+                "reveal"
             );
 
-
-            practicalModal.setAttribute(
-                "aria-hidden",
-                "false"
-            );
-
-
-            document.body.style.overflow =
-                "hidden";
-
-        }
-
-
-
-        /* =====================================================
-           CLOSE MODAL
-        ====================================================== */
-
-        function closePracticalBooking() {
-
-            practicalModal.classList.remove(
-                "open"
-            );
-
-
-            practicalModal.setAttribute(
-                "aria-hidden",
-                "true"
-            );
-
-
-            document.body.style.overflow =
-                "";
-
-        }
-
-
-
-        /* =====================================================
-           BOOK SESSION BUTTONS
-        ====================================================== */
-
-        practicalButtons.forEach(button => {
-
-            button.addEventListener(
-                "click",
-                () => {
-
-                    const productName =
-                        button.dataset.productName ||
-                        "CES Practical Session";
-
-
-                    const productPrice =
-                        button.dataset.productPrice ||
-                        "Price on request";
-
-
-                    openPracticalModal(
-                        productName,
-                        productPrice
-                    );
-
-                }
+            revealObserver.observe(
+                element
             );
 
         });
-
-
-
-        /* =====================================================
-           CLOSE BUTTON
-        ====================================================== */
-
-        if (closePracticalModal) {
-
-            closePracticalModal.addEventListener(
-                "click",
-                closePracticalBooking
-            );
-
-        }
-
-
-
-        /* =====================================================
-           OVERLAY
-        ====================================================== */
-
-        const modalOverlay =
-            practicalModal.querySelector(
-                ".practical-modal-overlay"
-            );
-
-
-        if (modalOverlay) {
-
-            modalOverlay.addEventListener(
-                "click",
-                closePracticalBooking
-            );
-
-        }
-
-
-
-        /* =====================================================
-           ESCAPE KEY
-        ====================================================== */
-
-        document.addEventListener(
-            "keydown",
-            event => {
-
-                if (
-                    event.key === "Escape" &&
-                    practicalModal.classList.contains(
-                        "open"
-                    )
-                ) {
-
-                    closePracticalBooking();
-
-                }
-
-            }
-        );
-
-    }
-
-
-
-    /* =========================================================
-       PRESELECT SERVICE FROM URL
-    ========================================================= */
-
-    const urlParams =
-        new URLSearchParams(
-            window.location.search
-        );
-
-
-    const selectedService =
-        urlParams.get("service");
-
-
-    const serviceSelect =
-        document.getElementById(
-            "serviceSelect"
-        );
-
-
-    if (
-        selectedService &&
-        serviceSelect
-    ) {
-
-        const matchingOption =
-            Array.from(
-                serviceSelect.options
-            ).find(
-                option =>
-                    option.value ===
-                        selectedService ||
-                    option.textContent.trim() ===
-                        selectedService
-            );
-
-
-        if (matchingOption) {
-
-            serviceSelect.value =
-                matchingOption.value;
-
-        }
 
     }
 

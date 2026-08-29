@@ -2113,3 +2113,877 @@
     }
 
 }
+
+/* =========================================================
+   CES CONTACT / PROJECT BRIEF
+========================================================= */
+
+.contact-workspace {
+
+    position: relative;
+
+}
+
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+
+.contact-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        0.65fr 1.35fr;
+
+    gap: 100px;
+
+    align-items: start;
+
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.contact-sidebar {
+
+    position: sticky;
+
+    top: 120px;
+
+}
+
+
+.contact-sidebar-block {
+
+    padding-bottom: 35px;
+
+    margin-bottom: 35px;
+
+    border-bottom:
+        1px solid var(--color-border);
+
+}
+
+
+.contact-label {
+
+    display: block;
+
+    margin-bottom: 18px;
+
+    color:
+        var(--color-gold);
+
+    font-size: 7px;
+
+    font-weight: 600;
+
+    letter-spacing:
+        0.15em;
+
+}
+
+
+.contact-sidebar h2 {
+
+    max-width: 350px;
+
+    margin: 0 0 20px;
+
+    font-family:
+        var(--font-display);
+
+    font-size:
+        clamp(40px, 5vw, 65px);
+
+    font-weight: 400;
+
+    line-height: 0.95;
+
+}
+
+
+.contact-sidebar h2 em {
+
+    display: block;
+
+    color:
+        var(--color-gold);
+
+    font-style: italic;
+
+}
+
+
+.contact-sidebar-block p {
+
+    max-width: 350px;
+
+    margin: 0;
+
+    color:
+        var(--color-muted);
+
+    font-size: 10px;
+
+    line-height: 1.8;
+
+}
+
+
+.contact-direct-link {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    color:
+        var(--color-text);
+
+    font-size: 10px;
+
+    text-decoration: none;
+
+}
+
+
+.contact-direct-link span {
+
+    color:
+        var(--color-gold);
+
+}
+
+
+.contact-service-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+}
+
+
+.contact-service-list span {
+
+    color:
+        var(--color-muted);
+
+    font-size: 9px;
+
+}
+
+
+.contact-sidebar-note {
+
+    display: flex;
+
+    gap: 15px;
+
+    padding: 18px;
+
+    border:
+        1px solid var(--color-border);
+
+}
+
+
+.contact-sidebar-note > span {
+
+    color:
+        var(--color-gold);
+
+}
+
+
+.contact-sidebar-note p {
+
+    margin: 0;
+
+    color:
+        var(--color-muted);
+
+    font-size: 9px;
+
+    line-height: 1.7;
+
+}
+
+
+.contact-sidebar-note strong {
+
+    color:
+        var(--color-text);
+
+    font-weight: 400;
+
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.contact-form-wrapper {
+
+    position: relative;
+
+}
+
+
+.ces-contact-form {
+
+    border:
+        1px solid var(--color-border);
+
+    background:
+        var(--color-bg-secondary);
+
+}
+
+
+.form-section {
+
+    padding:
+        40px;
+
+    border-bottom:
+        1px solid var(--color-border);
+
+}
+
+
+.form-section-heading {
+
+    display: flex;
+
+    gap: 25px;
+
+    margin-bottom: 35px;
+
+}
+
+
+.form-section-heading > span {
+
+    color:
+        var(--color-gold);
+
+    font-size: 8px;
+
+    letter-spacing:
+        0.12em;
+
+}
+
+
+.form-section-heading small {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color:
+        var(--color-muted);
+
+    font-size: 6px;
+
+    letter-spacing:
+        0.14em;
+
+}
+
+
+.form-section-heading h3 {
+
+    margin: 0;
+
+    color:
+        var(--color-text);
+
+    font-family:
+        var(--font-display);
+
+    font-size: 29px;
+
+    font-weight: 400;
+
+}
+
+
+/* =========================================================
+   SERVICE CHOICES
+========================================================= */
+
+.service-choice-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    border-top:
+        1px solid var(--color-border);
+
+    border-left:
+        1px solid var(--color-border);
+
+}
+
+
+.service-choice {
+
+    display: grid;
+
+    grid-template-columns:
+        30px 1fr 20px;
+
+    align-items: center;
+
+    gap: 15px;
+
+    min-height: 65px;
+
+    padding:
+        15px;
+
+    border: 0;
+
+    border-right:
+        1px solid var(--color-border);
+
+    border-bottom:
+        1px solid var(--color-border);
+
+    background:
+        transparent;
+
+    color:
+        var(--color-text);
+
+    font-family:
+        var(--font-body);
+
+    font-size: 9px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+
+}
+
+
+.service-choice:hover,
+.service-choice.selected {
+
+    background:
+        rgba(201, 163, 78, 0.08);
+
+}
+
+
+.choice-number {
+
+    color:
+        var(--color-gold);
+
+    font-size: 7px;
+
+}
+
+
+.service-choice strong {
+
+    color:
+        var(--color-gold);
+
+    font-weight: 400;
+
+    transition:
+        transform 0.3s ease;
+
+}
+
+
+.service-choice:hover strong,
+.service-choice.selected strong {
+
+    transform:
+        translateX(4px);
+
+}
+
+
+/* =========================================================
+   DYNAMIC FIELDS
+========================================================= */
+
+.dynamic-form-section {
+
+    display: none;
+
+}
+
+
+.dynamic-form-section.visible {
+
+    display: block;
+
+}
+
+
+.dynamic-fields {
+
+    display: none;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 20px;
+
+}
+
+
+.dynamic-fields.active {
+
+    display: grid;
+
+}
+
+
+.selected-product-box {
+
+    grid-column:
+        span 2;
+
+    padding:
+        18px;
+
+    border:
+        1px solid var(--color-border);
+
+    background:
+        rgba(201, 163, 78, 0.04);
+
+}
+
+
+.selected-product-box span {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color:
+        var(--color-gold);
+
+    font-size: 6px;
+
+    letter-spacing:
+        0.14em;
+
+}
+
+
+.selected-product-box strong {
+
+    color:
+        var(--color-text);
+
+    font-family:
+        var(--font-display);
+
+    font-size: 22px;
+
+    font-weight: 400;
+
+}
+
+
+/* =========================================================
+   FORM FIELDS
+========================================================= */
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 22px;
+
+}
+
+
+.field {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+}
+
+
+.full-field {
+
+    grid-column:
+        span 2;
+
+}
+
+
+.field label {
+
+    color:
+        var(--color-muted);
+
+    font-size: 7px;
+
+    font-weight: 500;
+
+    letter-spacing:
+        0.1em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.field input,
+.field select,
+.field textarea {
+
+    width: 100%;
+
+    padding:
+        14px 0;
+
+    border: 0;
+
+    border-bottom:
+        1px solid var(--color-border);
+
+    outline: none;
+
+    background:
+        transparent;
+
+    color:
+        var(--color-text);
+
+    font-family:
+        var(--font-body);
+
+    font-size: 10px;
+
+    transition:
+        border-color 0.3s ease;
+
+}
+
+
+.field input::placeholder,
+.field textarea::placeholder {
+
+    color:
+        rgba(255, 255, 255, 0.28);
+
+}
+
+
+.field select {
+
+    cursor: pointer;
+
+}
+
+
+.field select option {
+
+    background:
+        var(--color-bg-secondary);
+
+    color:
+        var(--color-text);
+
+}
+
+
+.field textarea {
+
+    resize:
+        vertical;
+
+    min-height:
+        120px;
+
+    line-height:
+        1.7;
+
+}
+
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+
+    border-bottom-color:
+        var(--color-gold);
+
+}
+
+
+/* =========================================================
+   SUBMIT
+========================================================= */
+
+.form-submit-area {
+
+    padding:
+        35px 40px;
+
+}
+
+
+.contact-submit {
+
+    width: 100%;
+
+    justify-content:
+        center;
+
+}
+
+
+.form-submit-area > p {
+
+    margin:
+        15px 0 0;
+
+    color:
+        var(--color-muted);
+
+    font-size: 7px;
+
+    line-height:
+        1.6;
+
+    text-align:
+        center;
+
+}
+
+
+.form-message {
+
+    min-height:
+        20px;
+
+    margin-bottom:
+        10px;
+
+    color:
+        var(--color-gold);
+
+    font-size: 9px;
+
+    text-align:
+        center;
+
+}
+
+
+/* =========================================================
+   SUCCESS
+========================================================= */
+
+.contact-success {
+
+    display: none;
+
+    padding:
+        70px 50px;
+
+    border:
+        1px solid var(--color-border);
+
+    background:
+        var(--color-bg-secondary);
+
+    text-align:
+        center;
+
+}
+
+
+.contact-success.visible {
+
+    display: block;
+
+}
+
+
+.success-symbol {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 60px;
+    height: 60px;
+
+    margin:
+        0 auto 30px;
+
+    border:
+        1px solid var(--color-border);
+
+    color:
+        var(--color-gold);
+
+}
+
+
+.contact-success h2 {
+
+    margin:
+        25px auto 20px;
+
+    max-width:
+        550px;
+
+    font-family:
+        var(--font-display);
+
+    font-size:
+        clamp(45px, 6vw, 70px);
+
+    font-weight:
+        400;
+
+    line-height:
+        0.95;
+
+}
+
+
+.contact-success h2 em {
+
+    color:
+        var(--color-gold);
+
+    font-style:
+        italic;
+
+}
+
+
+.contact-success p {
+
+    max-width:
+        450px;
+
+    margin:
+        0 auto 30px;
+
+    color:
+        var(--color-muted);
+
+    font-size:
+        10px;
+
+    line-height:
+        1.8;
+
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.contact-final-cta {
+
+    padding-top:
+        40px;
+
+}
+
+
+.contact-final-inner {
+
+    padding:
+        80px 20px;
+
+    border-top:
+        1px solid var(--color-border);
+
+    text-align:
+        center;
+
+}
+
+
+.contact-final-inner h2 {
+
+    max-width:
+        800px;
+
+    margin:
+        25px auto;
+
+    font-family:
+        var(--font-display);
+
+    font-size:
+        clamp(48px, 7vw, 85px);
+
+    font-weight:
+        400;
+
+    line-height:
+        0.9;
+
+}
+
+
+.contact-final-inner h2 em {
+
+    color:
+        var(--color-gold);
+
+    font-style:
+        italic;
+
+}
+
+
+.contact-final-inner p {
+
+    margin: 0;
+
+    color:
+        var(--color-muted);
+
+    font-size:
+        10px;
+
+}
