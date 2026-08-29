@@ -661,3 +661,430 @@
     }
 
 }
+
+/* =========================================================
+   SERVICES PAGE — RESPONSIVE
+========================================================= */
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .service-detail-header {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+    }
+
+
+    .service-detail-header h2 {
+
+        font-size:
+            clamp(55px, 9vw, 80px);
+
+    }
+
+
+    .service-project-card.featured {
+
+        grid-column:
+            span 1;
+
+    }
+
+
+    .service-project-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .services-cta {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .services-cta .btn {
+
+        width: auto;
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+    .service-detail-header {
+
+        margin-bottom:
+            45px;
+
+    }
+
+
+    .service-detail-header h2 {
+
+        font-size:
+            clamp(48px, 13vw, 65px);
+
+    }
+
+
+    .service-detail-intro {
+
+        gap: 15px;
+
+    }
+
+
+    .service-detail-intro p {
+
+        font-size: 11px;
+
+    }
+
+
+    .service-offerings {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .offering-card {
+
+        grid-template-columns:
+            25px 1fr 20px;
+
+        gap: 12px;
+
+        padding:
+            28px 18px;
+
+    }
+
+
+    .offering-card:nth-child(odd) {
+
+        border-right: 0;
+
+    }
+
+
+    .offering-card h3 {
+
+        font-size: 25px;
+
+    }
+
+
+    .offering-card p {
+
+        font-size: 9px;
+
+    }
+
+
+    .service-technology-row {
+
+        display: block;
+
+    }
+
+
+    .service-technology-row > span {
+
+        display: block;
+
+        margin-bottom: 15px;
+
+    }
+
+
+    .project-visual {
+
+        height: 240px;
+
+    }
+
+
+    .service-project-info {
+
+        display: block;
+
+        padding:
+            25px 20px;
+
+    }
+
+
+    .service-project-info h3 {
+
+        font-size: 28px;
+
+    }
+
+
+    .project-stack {
+
+        justify-content:
+            flex-start;
+
+        max-width: none;
+
+        margin-top: 20px;
+
+    }
+
+
+    .services-cta {
+
+        padding:
+            40px 22px;
+
+    }
+
+
+    .services-cta .btn {
+
+        width: 100%;
+
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .service-detail-header h2 {
+
+        font-size: 46px;
+
+    }
+
+
+    .offering-card {
+
+        padding:
+            25px 15px;
+
+    }
+
+
+    .offering-card h3 {
+
+        font-size: 23px;
+
+    }
+
+
+    .project-visual {
+
+        height: 210px;
+
+    }
+
+
+    .services-cta h2 {
+
+        font-size: 40px;
+
+    }
+
+}
+
+/* =========================================================
+   CES PRACTICALS — RESPONSIVE
+========================================================= */
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .practicals-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+    .practicals-intro {
+
+        align-items:
+            flex-start;
+
+        padding:
+            18px;
+
+    }
+
+
+    .practicals-intro p {
+
+        font-size:
+            18px;
+
+    }
+
+
+    .practicals-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .practical-card {
+
+        min-height:
+            auto;
+
+        padding:
+            28px 20px 22px;
+
+    }
+
+
+    .practical-card h3 {
+
+        font-size:
+            31px;
+
+    }
+
+
+    .practical-card > p {
+
+        font-size:
+            10px;
+
+    }
+
+
+    .practical-bottom {
+
+        align-items:
+            center;
+
+    }
+
+
+    .practical-btn {
+
+        padding:
+            11px 12px;
+
+    }
+
+
+    .practicals-note {
+
+        justify-content:
+            flex-start;
+
+        align-items:
+            flex-start;
+
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .practicals-intro {
+
+        gap:
+            13px;
+
+    }
+
+
+    .practicals-intro-mark {
+
+        width: 36px;
+        height: 36px;
+
+        font-size:
+            10px;
+
+    }
+
+
+    .practicals-intro p {
+
+        font-size:
+            16px;
+
+    }
+
+
+    .practical-card {
+
+        padding:
+            25px 17px 20px;
+
+    }
+
+
+    .practical-card h3 {
+
+        font-size:
+            29px;
+
+    }
+
+
+    .practical-bottom strong {
+
+        font-size:
+            25px;
+
+    }
+
+
+    .practical-btn {
+
+        font-size:
+            6px;
+
+    }
+
+}
