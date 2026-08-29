@@ -1248,3 +1248,252 @@
     }
 
 }
+
+/* =========================================================
+   ACADEMY — RESPONSIVE
+========================================================= */
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .academy-intro-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            30px;
+
+    }
+
+
+    .academy-principles {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .academy-offering-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .academy-package-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .academy-package {
+
+        min-height:
+            auto;
+
+    }
+
+
+    .academy-platform {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            40px;
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+    .academy-intro-grid h2 {
+
+        font-size:
+            52px;
+
+    }
+
+
+    .academy-principles {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .academy-principles > div {
+
+        min-height:
+            auto;
+
+        padding:
+            22px;
+
+    }
+
+
+    .academy-principles span {
+
+        margin-bottom:
+            20px;
+
+    }
+
+
+    .tech-learning-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .tech-learning-card {
+
+        min-height:
+            auto;
+
+    }
+
+
+    .learning-path {
+
+        grid-template-columns:
+            35px 1fr;
+
+        gap:
+            15px;
+
+        padding:
+            30px 0;
+
+    }
+
+
+    .path-content h3 {
+
+        font-size:
+            31px;
+
+    }
+
+
+    .path-flow {
+
+        gap:
+            7px;
+
+    }
+
+
+    .academy-package {
+
+        padding:
+            27px 20px;
+
+    }
+
+
+    .academy-platform {
+
+        padding:
+            40px 22px;
+
+    }
+
+
+    .academy-cta {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+        padding:
+            45px 22px;
+
+    }
+
+
+    .academy-cta .btn {
+
+        width:
+            100%;
+
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .academy-intro-grid h2 {
+
+        font-size:
+            45px;
+
+    }
+
+
+    .academy-offering-card {
+
+        padding:
+            23px 18px;
+
+    }
+
+
+    .academy-offering-card h3 {
+
+        font-size:
+            31px;
+
+    }
+
+
+    .tech-learning-card {
+
+        padding:
+            25px 18px;
+
+    }
+
+
+    .academy-platform h2 {
+
+        font-size:
+            45px;
+
+    }
+
+
+    .academy-cta h2 {
+
+        font-size:
+            45px;
+
+    }
+
+}

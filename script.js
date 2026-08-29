@@ -572,9 +572,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const urlService =
         urlParams.get("service");
 
-
     const urlProduct =
         urlParams.get("product");
+
+    const urlSubject =
+        urlParams.get("subject");
+
+    const urlPackage =
+        urlParams.get("package");
+        
 
 
     if (urlService) {
@@ -595,6 +601,57 @@ document.addEventListener("DOMContentLoaded", () => {
             urlProduct;
 
     }
+
+    /* =========================================================
+   ACADEMY URL PARAMETERS
+========================================================= */
+
+const academySubject =
+    document.querySelector(
+        '[name="academySubject"]'
+    );
+
+
+if (
+    urlSubject &&
+    academySubject
+) {
+
+    const matchingSubject =
+        Array.from(
+            academySubject.options
+        ).find(
+            option =>
+                option.textContent.trim() ===
+                urlSubject
+        );
+
+
+    if (matchingSubject) {
+
+        academySubject.value =
+            matchingSubject.value;
+
+    }
+
+}
+
+
+const academyPackage =
+    document.querySelector(
+        '[name="academyPackage"]'
+    );
+
+
+if (
+    urlPackage &&
+    academyPackage
+) {
+
+    academyPackage.value =
+        urlPackage;
+
+}
 
 
 
