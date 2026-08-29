@@ -1,0 +1,518 @@
+/* =========================================================
+   CES — INTERNAL PAGES
+========================================================= */
+
+
+/* =========================================================
+   PAGE HERO
+========================================================= */
+
+.page-hero {
+
+    position: relative;
+
+    min-height: 65vh;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    padding:
+        150px 0 80px;
+
+    border-bottom:
+        1px solid var(--color-border);
+
+    overflow: hidden;
+
+}
+
+
+/* Subtle background grid */
+
+.page-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        linear-gradient(
+            rgba(201, 163, 78, 0.035) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(201, 163, 78, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        80px 80px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent
+        );
+
+    pointer-events: none;
+
+}
+
+
+.page-hero-content {
+
+    position: relative;
+
+    max-width: 850px;
+
+}
+
+
+.page-hero h1 {
+
+    margin:
+        25px 0;
+
+    max-width: 850px;
+
+    font-family:
+        var(--font-display);
+
+    font-size:
+        clamp(55px, 8vw, 110px);
+
+    font-weight: 400;
+
+    line-height: 0.92;
+
+    color:
+        var(--color-text);
+
+}
+
+
+.page-hero h1 em {
+
+    color:
+        var(--color-gold);
+
+    font-style: italic;
+
+}
+
+
+.page-hero p {
+
+    max-width: 550px;
+
+    margin: 30px 0 0;
+
+    color:
+        var(--color-muted);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+}
+
+
+.page-hero-meta {
+
+    position: absolute;
+
+    right: 0;
+
+    bottom: 80px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 8px;
+
+    color:
+        var(--color-muted);
+
+    font-size: 7px;
+
+    letter-spacing: 0.15em;
+
+}
+
+
+/* =========================================================
+   FOUNDER PAGE
+========================================================= */
+
+.founder-page-section {
+
+    overflow: hidden;
+
+}
+
+
+.founder-page-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        0.85fr 1.15fr;
+
+    gap: 100px;
+
+    align-items: center;
+
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile-section {
+
+    background:
+        var(--color-bg-secondary);
+
+}
+
+
+.profile-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    border-top:
+        1px solid var(--color-border);
+
+    border-bottom:
+        1px solid var(--color-border);
+
+}
+
+
+.profile-card {
+
+    position: relative;
+
+    min-height: 420px;
+
+    padding:
+        35px;
+
+    border-right:
+        1px solid var(--color-border);
+
+}
+
+
+.profile-card:last-child {
+
+    border-right: 0;
+
+}
+
+
+.profile-number {
+
+    position: absolute;
+
+    top: 25px;
+
+    right: 25px;
+
+    color:
+        rgba(201, 163, 78, 0.55);
+
+    font-size: 8px;
+
+    letter-spacing:
+        0.15em;
+
+}
+
+
+.profile-card-label {
+
+    display: block;
+
+    margin-bottom: 45px;
+
+    color:
+        var(--color-gold);
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    letter-spacing:
+        0.14em;
+
+}
+
+
+.profile-card h3 {
+
+    max-width: 300px;
+
+    margin: 0 0 20px;
+
+    color:
+        var(--color-text);
+
+    font-family:
+        var(--font-display);
+
+    font-size: 36px;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+}
+
+
+.profile-card h3 em {
+
+    display: block;
+
+    color:
+        var(--color-gold);
+
+    font-style: italic;
+
+}
+
+
+.profile-card > p {
+
+    max-width: 300px;
+
+    margin-bottom: 35px;
+
+    color:
+        var(--color-muted);
+
+    font-size: 11px;
+
+    line-height: 1.8;
+
+}
+
+
+.profile-card-list {
+
+    border-top:
+        1px solid var(--color-border);
+
+}
+
+
+.profile-card-list div {
+
+    padding:
+        11px 0;
+
+    border-bottom:
+        1px solid var(--color-border);
+
+    color:
+        var(--color-text);
+
+    font-size: 9px;
+
+}
+
+
+.profile-card-list span {
+
+    margin-right: 10px;
+
+    color:
+        var(--color-gold);
+
+}
+
+
+/* =========================================================
+   TECHNOLOGY
+========================================================= */
+
+.technology-section {
+
+    overflow: hidden;
+
+}
+
+
+.technology-groups {
+
+    border-top:
+        1px solid var(--color-border);
+
+}
+
+
+.technology-group {
+
+    display: grid;
+
+    grid-template-columns:
+        250px 1fr;
+
+    gap: 50px;
+
+    padding:
+        30px 0;
+
+    border-bottom:
+        1px solid var(--color-border);
+
+}
+
+
+.technology-group-title {
+
+    color:
+        var(--color-text);
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing:
+        0.12em;
+
+}
+
+
+.technology-group-title span {
+
+    display: inline-block;
+
+    width: 25px;
+
+    color:
+        var(--color-gold);
+
+}
+
+
+.technology-list {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+}
+
+
+.technology-list span {
+
+    padding:
+        8px 12px;
+
+    border:
+        1px solid var(--color-border);
+
+    color:
+        var(--color-muted);
+
+    font-size: 8px;
+
+    letter-spacing:
+        0.04em;
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease;
+
+}
+
+
+.technology-list span:hover {
+
+    color:
+        var(--color-gold);
+
+    border-color:
+        rgba(201, 163, 78, 0.5);
+
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.profile-cta-section {
+
+    padding-top: 60px;
+
+}
+
+
+.profile-cta {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    padding:
+        70px;
+
+    border:
+        1px solid var(--color-border);
+
+    background:
+        var(--color-bg-secondary);
+
+}
+
+
+.profile-cta h2 {
+
+    margin:
+        20px 0 0;
+
+    font-family:
+        var(--font-display);
+
+    font-size:
+        clamp(40px, 5vw, 65px);
+
+    font-weight: 400;
+
+    line-height: 0.95;
+
+}
+
+
+.profile-cta h2 em {
+
+    display: block;
+
+    color:
+        var(--color-gold);
+
+    font-style: italic;
+
+}
